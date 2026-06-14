@@ -151,6 +151,14 @@
       gap: 22px;
     }
 
+    .hero-copy {
+      order: 2;
+    }
+
+    .hero-media {
+      order: 1;
+    }
+
     .eyebrow,
     .label {
       margin: 0 0 10px;
@@ -289,6 +297,10 @@
       border-radius: var(--radius);
       background: var(--surface);
       box-shadow: var(--shadow);
+    }
+
+    .waitlist .button {
+      justify-self: end;
     }
 
     .form-grid {
@@ -519,23 +531,6 @@
       margin-top: 22px;
     }
 
-    .sticky-cta {
-      position: fixed;
-      left: var(--gutter);
-      right: var(--gutter);
-      bottom: calc(12px + env(safe-area-inset-bottom));
-      z-index: 20;
-      min-height: 52px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: var(--radius);
-      color: #fffaf2;
-      background: var(--ink);
-      box-shadow: 0 16px 34px rgba(34, 25, 22, 0.22);
-      font-weight: 900;
-    }
-
     footer {
       border-top: 1px solid var(--line);
       padding: 22px 0;
@@ -578,6 +573,13 @@
       }
     }
 
+    @media (max-width: 559px) {
+      .waitlist .button {
+        width: 100%;
+        justify-self: stretch;
+      }
+    }
+
     @media (min-width: 820px) {
       .nav-link {
         display: inline-flex;
@@ -591,6 +593,11 @@
         grid-template-columns: minmax(0, 0.92fr) minmax(340px, 1.08fr);
         align-items: center;
         gap: 48px;
+      }
+
+      .hero-copy,
+      .hero-media {
+        order: initial;
       }
 
       .hero-media img {
@@ -650,10 +657,6 @@
         box-shadow: 0 16px 34px rgba(34, 25, 22, 0.14);
       }
 
-      .sticky-cta {
-        display: none;
-      }
-
       .footer-inner {
         display: flex;
         justify-content: space-between;
@@ -679,7 +682,7 @@
   <main id="top">
     <section class="hero shell">
       <div class="hero-grid">
-        <div>
+        <div class="hero-copy">
           <p class="eyebrow">First tasting circle - Bangalore</p>
           <h1>Zee's Tasting Circle</h1>
           <p class="subtitle">Zee has made Hyderabadi-style chicken bites with toum for a small first tasting at the event.</p>
@@ -757,15 +760,13 @@
             <textarea id="notes" name="Notes" placeholder="Preferred contact method, spice level, dietary notes, or anything Zee should know."></textarea>
           </div>
         </div>
-        <button class="button primary" type="submit">Send my details</button>
+        <button class="button primary" type="submit">Send &amp; join the circle</button>
         <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
         <p class="form-note"><strong>No pressure, no spam.</strong> Submissions go to zikrakakhana@gmail.com.</p>
       </form>
     </section>
 
   </main>
-
-  <a class="sticky-cta" href="#waitlist" aria-label="Join Zee's Tasting Circle">Stay in the circle</a>
 
   <footer>
     <div class="footer-inner shell">
@@ -806,7 +807,7 @@
         formStatus.textContent = "Could not submit. Please try again from the hosted page.";
       } finally {
         submitButton.disabled = false;
-        submitButton.textContent = "Send my details";
+        submitButton.textContent = "Send & join the circle";
       }
     });
   </script>
