@@ -24,6 +24,11 @@
       box-sizing: border-box;
     }
 
+    @page {
+      size: A4 portrait;
+      margin: 0;
+    }
+
     html,
     body {
       min-height: 100%;
@@ -137,6 +142,30 @@
         grid-row: 1 / span 4;
         width: min(43svh, 440px);
         align-self: center;
+      }
+    }
+
+    @media print {
+      html,
+      body {
+        width: 210mm;
+        min-height: 297mm;
+        print-color-adjust: exact;
+        -webkit-print-color-adjust: exact;
+      }
+
+      body {
+        place-items: center;
+      }
+
+      main {
+        width: 190mm;
+        min-height: 277mm;
+        box-shadow: none;
+      }
+
+      .qr-frame {
+        width: 135mm;
       }
     }
   </style>
