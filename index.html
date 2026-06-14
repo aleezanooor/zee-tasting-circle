@@ -248,6 +248,7 @@
     }
 
     .hero-media {
+      margin: 0;
       border-radius: var(--radius);
       overflow: hidden;
       background: var(--surface);
@@ -596,6 +597,11 @@
     }
 
     @media (max-width: 559px) {
+      .hero-media {
+        width: calc(100% + 12px);
+        margin-inline: -6px;
+      }
+
       .waitlist .button {
         width: 100%;
         justify-self: stretch;
