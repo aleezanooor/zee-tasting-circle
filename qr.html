@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Scan for Zee's Tasting Circle</title>
+  <meta name="description" content="QR code for Zee's Tasting Circle.">
+  <style>
+    :root {
+      --ink: #1f1714;
+      --paper: #fff8ef;
+      --surface: #fffdf9;
+      --muted: #675952;
+      --line: rgba(31, 23, 20, 0.14);
+      --rose: #9f4051;
+      --saffron: #cf6a2c;
+      --gold: #e8b45a;
+      --leaf: #476d4d;
+      --teal: #2d6870;
+      --radius: 8px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      min-height: 100%;
+    }
+
+    body {
+      margin: 0;
+      display: grid;
+      place-items: center;
+      background:
+        linear-gradient(135deg, rgba(232, 180, 90, 0.18), transparent 38%),
+        linear-gradient(315deg, rgba(45, 104, 112, 0.16), transparent 42%),
+        var(--paper);
+      color: var(--ink);
+      font-family: "Aptos", "Segoe UI", sans-serif;
+      text-align: center;
+    }
+
+    main {
+      width: min(100% - 28px, 780px);
+      min-height: min(920px, calc(100svh - 28px));
+      display: grid;
+      align-content: center;
+      justify-items: center;
+      gap: clamp(18px, 4svh, 34px);
+      padding: clamp(18px, 4vw, 42px);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: rgba(255, 253, 249, 0.9);
+      box-shadow: 0 24px 70px rgba(31, 23, 20, 0.14);
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 11px;
+      font-weight: 900;
+    }
+
+    .brand-mark {
+      width: 44px;
+      height: 44px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      color: #fff;
+      background: conic-gradient(from 225deg, var(--rose), var(--saffron), var(--gold), var(--leaf), var(--teal), var(--rose));
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 20px;
+    }
+
+    h1 {
+      max-width: 10ch;
+      margin: 0;
+      font-family: "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+      font-size: clamp(3.2rem, 15vw, 6.8rem);
+      font-weight: 500;
+      letter-spacing: 0;
+      line-height: 0.9;
+    }
+
+    .qr-frame {
+      width: min(86vw, 520px);
+      padding: clamp(12px, 3vw, 22px);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: #fff;
+      box-shadow: 0 16px 42px rgba(31, 23, 20, 0.12);
+    }
+
+    .qr-frame img {
+      display: block;
+      width: 100%;
+      height: auto;
+      image-rendering: pixelated;
+    }
+
+    p {
+      max-width: 30rem;
+      margin: 0;
+      color: var(--muted);
+      font-size: clamp(1rem, 3.5vw, 1.25rem);
+      line-height: 1.35;
+    }
+
+    .url {
+      color: var(--ink);
+      font-size: clamp(0.84rem, 2.8vw, 1rem);
+      font-weight: 850;
+      overflow-wrap: anywhere;
+    }
+
+    @media (orientation: landscape) and (max-height: 620px) {
+      main {
+        width: min(100% - 28px, 980px);
+        min-height: calc(100svh - 28px);
+        grid-template-columns: 1fr minmax(260px, 43svh);
+        gap: 24px;
+        text-align: left;
+      }
+
+      .brand,
+      h1,
+      p,
+      .url {
+        justify-self: start;
+      }
+
+      .qr-frame {
+        grid-column: 2;
+        grid-row: 1 / span 4;
+        width: min(43svh, 440px);
+        align-self: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="brand" aria-label="Zee's Tasting Circle">
+      <span class="brand-mark" aria-hidden="true">Z</span>
+      <span>Zee's Tasting Circle</span>
+    </div>
+    <h1>Scan to join.</h1>
+    <div class="qr-frame">
+      <img src="assets/zee-tasting-qr.svg" alt="QR code linking to Zee's Tasting Circle page.">
+    </div>
+    <p>Open the tasting page, leave your details, and stay in the circle for Zee's next small batch.</p>
+    <p class="url">aleezanooor.github.io/zee-tasting-circle</p>
+  </main>
+</body>
+</html>
